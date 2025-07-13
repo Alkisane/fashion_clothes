@@ -1,0 +1,714 @@
+/* Основной стиль для body */
+.body {
+    font-family: "Lato", serif;
+}
+
+/* Стили для хедера */
+header {
+    background-color: #222222;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+/* Стили для body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", serif;
+}
+
+/* Общий стиль для header */
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    /* Расположить элементы по краям */
+    align-items: center;
+    /* Вертикальное выравнивание */
+    max-width: 1140px;
+    /* Ограничение ширины */
+    margin: 0 auto;
+    /* Центрирование контейнера */
+    padding: 0 20px;
+    /* Отступы для адаптивности */
+    width: 100%;
+    /* Полная ширина для фона */
+    box-sizing: border-box;
+    /* Учитывать padding в ширине */
+}
+
+/* Логотип и поиск */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 41px;
+    /* Расстояние между логотипом и поиском */
+}
+
+.logo-img {
+    width: 44px;
+    height: 38px;
+}
+
+.search-img {
+    width: 26px;
+    height: 27px;
+}
+
+/* Блок меню, профиля и корзины */
+.button-copy {
+    display: flex;
+    align-items: center;
+    gap: 33px;
+    /* Расстояние между элементами справа */
+}
+
+/* Иконка меню */
+.menu-toggle {
+    position: relative;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-toggle img {
+    width: 32px;
+    height: auto;
+}
+
+/* Меню */
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 232px;
+    height: 634px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+/* Заголовок "MENU" */
+.nav-menu h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* Группы меню */
+.group {
+    margin-bottom: 20px;
+}
+
+.group h5 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #F16D7F;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.group ul li {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.group ul li a {
+    text-decoration: none;
+    color: #6F6E6E;
+}
+
+/* Активное меню */
+.nav-menu.menu-active {
+    display: block;
+}
+
+
+.hero {
+    background-color: #F1E4E6;
+    height: 760px;
+    /* Высота для больших экранов */
+    display: flex;
+    justify-content: center;
+    /* Центрируем основной контент */
+    align-items: center;
+    padding: 0 20px;
+    /* Отступы по бокам */
+}
+
+.content-hero {
+    padding-left: 63px;
+    /* Расстояние текста от левого края */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Расстояние между линией и текстом */
+    max-width: 50%;
+    /* Ограничиваем ширину текста */
+    flex-grow: 1;
+    /* Позволяем тексту занимать доступное пространство */
+}
+
+.vertical-line {
+    width: 12px;
+    /* Толщина линии */
+    background-color: #F16D7F;
+    /* Розовый цвет */
+    height: 92px;
+    /* Высота текста */
+    flex-shrink: 0;
+    /* Линия сохраняет размер */
+}
+
+.text-hero {
+    font-size: 0;
+    /* Сбрасываем общий размер шрифта для управления через span */
+    line-height: 1.2;
+    /* Уменьшение межстрочного интервала */
+    margin: 0;
+}
+
+.brand-title {
+    font-size: 48px;
+    font-weight: 900;
+    color: #222;
+    display: block;
+}
+
+.brand-subtitle {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+}
+
+.pink-text {
+    color: #F16D7F;
+}
+
+.hero img {
+    width: 800px;
+    /* Ширина изображения */
+    height: auto;
+    /* Сохраняем пропорции картинки */
+    object-fit: cover;
+    /* Чтобы картинка выглядела аккуратно */
+}
+
+/* Адаптация для экранов до 1024px */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 0 40px;
+        /* Увеличиваем внутренние отступы */
+    }
+
+    .content-hero {
+        padding-left: 40px;
+        /* Уменьшаем отступ текста */
+    }
+
+    .hero img {
+        width: 600px;
+        /* Уменьшаем размер изображения */
+    }
+}
+
+/* Адаптация для экранов до 768px */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        /* Переносим элементы в столбик */
+        height: auto;
+        /* Высота автоматически подстраивается */
+        padding: 40px 20px;
+    }
+
+    .content-hero {
+        max-width: 100%;
+        /* Текст занимает всю ширину */
+        padding-left: 0;
+        /* Убираем отступ слева */
+        justify-content: center;
+        /* Центрируем текст относительно экрана */
+        text-align: center;
+        /* Для выравнивания текста */
+    }
+
+    .vertical-line {
+        height: 60px;
+        /* Уменьшаем высоту линии */
+        width: 8px;
+        /* Уменьшаем толщину линии */
+    }
+
+    .brand-title {
+        font-size: 36px;
+        /* Уменьшаем размер заголовка */
+    }
+
+    .brand-subtitle {
+        font-size: 24px;
+        /* Уменьшаем размер подзаголовка */
+    }
+
+    .hero img {
+        width: 100%;
+        /* Картинка занимает всю ширину */
+    }
+}
+
+/* Адаптация для экранов до 480px */
+@media (max-width: 480px) {
+    .content-hero {
+        gap: 10px;
+        /* Уменьшаем расстояние между линией и текстом */
+    }
+
+    .vertical-line {
+        height: 40px;
+        /* Ещё меньше высота линии */
+        width: 6px;
+        /* Ещё меньше толщина линии */
+    }
+
+    .brand-title {
+        font-size: 28px;
+        /* Уменьшаем заголовок */
+    }
+
+    .brand-subtitle {
+        font-size: 18px;
+        /* Уменьшаем подзаголовок */
+    }
+
+    .hero img {
+        max-width: 100%;
+        /* Картинка занимает всю ширину */
+    }
+}
+
+/* Общие стили для секции */
+.offer {
+    padding-top: 65px;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* Расстояние между верхними и нижними блоками */
+}
+
+/* Верхние блоки */
+.top-offer {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    /* Расстояние между верхними блоками */
+}
+
+/* Каждый блок */
+.offer-block {
+    position: relative;
+    width: 360px;
+    height: 260px;
+    overflow: hidden;
+}
+
+/* Фоновая картинка */
+.background-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Чтобы картинка корректно вписывалась */
+}
+
+/* Наложение цвета */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 22, 22, 0.7);
+    /* Полупрозрачный наложенный цвет */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Текст сверху */
+.top-offer-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    /* Белый цвет */
+}
+
+/* Текст снизу */
+.bottom-offer-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #F16D7F;
+    /* Розовый цвет */
+}
+
+/* Нижний блок */
+.bottom-offer .full-width {
+    width: 100%;
+    /* Растягиваем на всю ширину */
+    height: 180px;
+    /* Высота блока */
+}
+
+/* Адаптация для мобильных экранов */
+@media (max-width: 768px) {
+    .top-offer {
+        flex-direction: column;
+        /* Верхние блоки в столбик */
+        gap: 20px;
+    }
+
+    .offer-block {
+        width: 100%;
+        /* Блоки растягиваются */
+        height: auto;
+        /* Высота пропорциональна содержимому */
+    }
+
+    .bottom-offer .full-width {
+        height: auto;
+        /* Высота адаптируется */
+    }
+
+    .top-offer-text {
+        font-size: 18px;
+        /* Уменьшаем текст */
+    }
+
+    .bottom-offer-text {
+        font-size: 24px;
+        /* Уменьшаем текст */
+    }
+}
+
+
+
+/* Контейнер для всех товаров */
+/* Контейнер для всех товаров */
+.products-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки с равным делением */
+    gap: 30px; /* Расстояние между блоками */
+    max-width: 1140px; /* Общая ширина контейнера */
+    margin: 0 auto; /* Центрируем контейнер по горизонтали */
+    padding: 20px; /* Добавляем отступ внутри контейнера */
+}
+
+
+/* Централизованный заголовок над товарами */
+.product-title {
+    margin-top: 95px;
+    text-align: center;
+    margin-bottom: 30px; /* Отступ от заголовка до товаров */
+}
+
+.product-title h1 {
+    color: #222222;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.product-title p {
+    color: #9F9F9F;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 5px 0 0;
+}
+
+/* Карточка товара */
+.ware {
+    width: 100%; /* Ширина карточки товара */
+    background-color: #F8F8F8; /* Цвет фона карточки */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Картинка товара в карточке */
+.ware-picture {
+    position: relative;
+    width: 100%;
+    height: 420px; /* Высота изображения */
+    overflow: hidden;
+}
+
+.ware-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Сохраняем пропорции изображения */
+    transition: all 0.3s ease; /* Плавный переход */
+}
+
+/* Затемнение и кнопка добавления в корзину */
+.add-to-cart-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(58, 56, 56, 0.86); /* Затемнение фона */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Затемнение скрыто по умолчанию */
+    transition: opacity 0.3s ease;
+}
+
+/* Показываем затемнение при наведении на картинку */
+.ware-picture:hover .add-to-cart-container {
+    opacity: 1;
+}
+
+/* Стили кнопки добавления в корзину */
+.add-to-cart {
+    display: inline-flex; /* Содержимое кнопки в одну строку */
+    align-items: center; /* Вертикальное выравнивание */
+    gap: 10px; /* Расстояние между иконкой и текстом */
+    padding: 8px 16px; /* Внутренние отступы */
+    border: 1px solid #FFFFFF; /* Белая рамка */
+    border-radius: 0; /* Без закруглений */
+    background-color: transparent; /* Прозрачный фон */
+    color: #FFFFFF; /* Белый текст */
+    font-size: 14px; /* Размер текста */
+    cursor: pointer; /* Курсор-указатель */
+    transition: all 0.3s ease; /* Плавный переход */
+}
+
+.add-to-cart img {
+    width: 26px; /* Размер иконки */
+    height: 23px;
+}
+
+/* Стили кнопки при наведении */
+.add-to-cart:hover {
+    background-color: transparent; /* Прозрачный фон при наведении */
+    color: #FFFFFF; /* Белый текст */
+    border: 1px solid #FFFFFF; /* Белая рамка остаётся */
+}
+
+/* Заголовок товара */
+.ware h1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 25px 20px 5px;
+    color: #333;
+}
+
+/* Описание товара */
+.ware p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #777;
+    margin: 0 20px 10px;
+    line-height: 1.5;
+}
+
+/* Цена товара */
+.ware h4 {
+    font-size: 16px;
+    color: #F16D7F;
+    font-weight: bold;
+    margin: 0 20px 20px;
+
+}
+
+.button-wrapper {
+    padding-top: 40px;
+    text-align: center;
+    padding-bottom: 95px;
+}
+
+/* Стили для кнопки */
+.browse-button {
+    width: 212px; /* Ширина кнопки */
+    height: 48px; /* Высота кнопки */
+    border: 1px solid #F16D7F; /* Розовый бордер */
+    background-color: #fff; /* Белый фон */
+    color: #F16D7F; /* Розовый текст */
+    font-family: "Lato", serif;
+    font-size: 16px; /* Размер текста */
+    font-weight: 400; /* Жирный текст */
+    text-align: center;
+    line-height: 48px; /* Центрирование текста по вертикали */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Плавный переход при наведении */
+  }
+  
+  /* Стили при наведении */
+  .browse-button:hover {
+    background-color: #F16D7F; /* Розовый фон */
+    color: #fff; /* Белый текст */
+  }
+  
+
+  .feature {
+    background-color: #222224;
+    width: 100%;
+    height: 340px;
+    display: flex; /* Flexbox для выравнивания */
+    justify-content: center; /* Центрируем обертку по горизонтали */
+    align-items: center; /* Центрируем обертку по вертикали */
+}
+
+.feature-wrapper {
+    max-width: 1140px;
+    width: 100%;
+    display: flex;
+    gap: 30px; /* Расстояние между блоками */
+    justify-content: space-between; /* Равномерное распределение блоков */
+    text-align: center;
+    flex-wrap: wrap; /* Перенос блоков при уменьшении экрана */
+    align-items: center; /* Выровняем блоки по вертикали */
+}
+
+.feature-block {
+    flex: 1 1 calc(33.333% - 20px); /* Три блока равной ширины с учетом отступов */
+    max-width: calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+.feature-block img {
+    width: 41px; /* Фиксированная ширина для всех изображений */
+    height: 35px; /* Фиксированная высота для всех изображений */
+    margin-bottom: 10px; /* Отступ от текста */
+    display: inline-block; /* Центрируем внутри блока */
+}
+
+
+.feature-block h1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #FBFBFB;
+}
+
+.feature-block p {
+    color: #FBFBFB;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+
+.info {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    background-color: #F4F4F4B2;
+}
+
+.background-image-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/background-img.svg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1140px;  /* Ограничиваем ширину контейнера */
+    margin: 0 auto;  /* Выравниваем контейнер по центру */
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    box-sizing: border-box;  /* Включаем учёт отступов и границ в ширину */
+}
+
+.subscribe-info {
+    flex: 1;
+    text-align: center;
+    padding-left: 20px;  /* Отступ слева */
+}
+
+.subscribe-info img {
+    max-width: 100%;
+    height: auto;
+}
+
+.subscribe-info p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #222224;
+    line-height: 1.5;
+}
+
+.subscribe-content {
+    text-align: center;
+    flex: 1;
+}
+
+.subscribe-content h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+}
+
+.subscribe-content h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.subscribe-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 450px;
+    margin: 20px auto;
+}
+
+.subscribe-form input {
+    width: 55%;
+    height: 100%;
+    border: 0;
+    border-right: none;
+    border-radius: 50px 0 0 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    outline: none;
+    color: #222224;
+    background-color: #E1E1E1;
+}
+
+.subscribe-form button {
+    width: 25%;
+    height: 100%;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    background-color: #F16D7F;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+}
